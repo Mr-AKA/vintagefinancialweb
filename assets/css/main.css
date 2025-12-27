@@ -217,6 +217,32 @@ h6 {
 .contact-info-card:hover {
   background-color: #f8f9fa;
 }
+.responsive-map-container {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  /* This creates a 16:9 aspect ratio. 
+     Use 50% for a slimmer map or 75% for a taller map */
+  padding-top: 450px;
+  border-radius: 12px;
+}
+
+/* On mobile, make the map a bit taller so it's easier to touch/move */
+@media (max-width: 768px) {
+  .responsive-map-container {
+    padding-top: 300px;
+  }
+}
+
+.responsive-map-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100% !important;
+  height: 100% !important;
+}
 .map-container {
   height: 400px;
   width: 100%;
@@ -327,10 +353,6 @@ h6 {
   line-height: 1;
 }
 
-.header .logo .whitelogo {
-  display: none;
-}
-
 .header .logo img {
   max-height: 60px;
   margin-right: 8px;
@@ -387,12 +409,12 @@ h6 {
 .scrolled .header {
   --background-color: rgba(21, 34, 43, 0.85);
 }
-.scrolled .header .logo .bluelogo {
+/* .scrolled .header .logo .bluelogo {
   display: none;
 }
 .scrolled .header .logo .whitelogo {
   display: block;
-}
+} */
 
 /*--------------------------------------------------------------
 # Navigation Menu
@@ -1020,6 +1042,13 @@ section,
 /*--------------------------------------------------------------
 # Hero Section
 --------------------------------------------------------------*/
+.hero-title {
+  font-size: 48px;
+  font-weight: 1;
+  text-transform: uppercase;
+  color: var(--accent-white) !important;
+}
+
 .log {
   color: var(--accent-color) !important;
   font-size: 56px !important;
@@ -1063,10 +1092,11 @@ section,
   font-size: 48px;
   font-weight: 700;
   text-transform: uppercase;
+  color: var(--accent-white);
 }
 
 .hero p {
-  color: color-mix(in srgb, var(--default-color), transparent 20%);
+  color: color-mix(in srgb, var(--accent-white), transparent 30%);
   margin: 10px 0 0 0;
   font-size: 24px;
 }
