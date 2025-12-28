@@ -1076,7 +1076,7 @@ section,
 
 .hero:before {
   content: "";
-  background: color-mix(in srgb, var(--background-color), transparent 30%);
+  background: color-mix(in srgb, var(--background-color), transparent 40%);
   position: absolute;
   inset: 0;
   z-index: 2;
@@ -1096,7 +1096,7 @@ section,
 }
 
 .hero p {
-  color: color-mix(in srgb, var(--accent-white), transparent 30%);
+  color: color-mix(in srgb, var(--accent-white), transparent 1%);
   margin: 10px 0 0 0;
   font-size: 24px;
 }
@@ -1222,15 +1222,23 @@ section,
   font-family: var(--heading-font);
   font-size: 16px;
 }
+.background-image {
+  opacity: 0.6; /* 0.5–0.8 is ideal */
+}
 
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(14, 20, 27, 0.548); /* adjust 0.2–0.6 */
+}
 .services-section {
   /* Replace the URL below with your actual image path */
-  background-image: url("/assets/img/hero-bg.jpg");
-  background-size: cover;
+  background-image: url("/assets/img/hero-image.png");
   background-position: center;
   background-attachment: fixed; /* Optional: creates a parallax effect */
   position: relative;
 }
+
 .services-section i {
   color: var(--accent-color);
   margin-bottom: 20px;
@@ -1239,6 +1247,11 @@ section,
 .services-section a {
   color: var(--primary-navy);
   margin-bottom: 15px;
+}
+.services-section h2 {
+  color: var(--contrast-color) !important;
+  font-size: 28px;
+  margin-bottom: 10px;
 }
 
 /* Optional styling for the title underline */
